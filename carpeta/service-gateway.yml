@@ -1,12 +1,12 @@
 server:
-  port: 8002
+  port:8002
 spring:
   cloud:
     gateway:
       routes:
-            -id: service-producto
-             uri: lb://service-producto
-             predicates:
-                  - Path: /api/producto/**
-             filters:
-                  - StripPrefix: 2
+          - id: service-producto
+            uri: lb://service-producto
+            predicates:
+              - Path=api/productos/**
+            filters:
+              - StripPrefix=2
