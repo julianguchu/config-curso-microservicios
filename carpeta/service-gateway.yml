@@ -1,12 +1,2 @@
 server:
   port: 8007
-spring:
-  cloud:
-    gateway:
-      routes:
-          - id: service-producto
-            uri: lb://service-producto
-            predicates:
-              - Path=api/productos/**
-            filters:
-              - StripPrefix=2
