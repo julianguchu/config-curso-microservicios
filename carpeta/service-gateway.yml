@@ -1,0 +1,13 @@
+server:
+  port: 8002
+  
+spring:
+  cloud:
+    gateway:
+      routes:
+            -id: service-producto
+             uri: lb://service-producto
+             predicates:
+                  - Path: /api/producto/**
+             filters:
+                  - StripPrefix: 2
